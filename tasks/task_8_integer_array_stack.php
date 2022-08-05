@@ -76,7 +76,7 @@ $page =
     <div class="container mx-auto">
         <div>
             <h1 class="my-3">
-                3.) Create a queue of integers using arrays (first in first out )
+                3.) Create a stack of integers using arrays (first in last out )
             </h1>
             <ol class="list-disc">
                 <li>Create input fields and push button to insert new value.</li>
@@ -87,14 +87,14 @@ $page =
         </div>
         <div>
             <?php
-                $arrayStack = $_SESSION['ARRAY_STACK'];
+            $arrayStack = $_SESSION['ARRAY_STACK'];
             ?>
             <div class="mb-2">
                 <h1 class="font-bold">Stack : </h1>
                 <div class="my-5">
                     <?php if (count($arrayStack) == 0) : ?>
-                        <span>
-                            []
+                        <span class="p-2 bg-gray-900 text-white mr-1 rounded shadow">
+                            Empty []
                         </span>
                     <?php else : ?>
                         <?php for ($i = 0; $i < count($arrayStack); $i++) : ?>

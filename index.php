@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 
-<?php 
-    if (isset($_SESSION))
-    {
-        session_destroy();
-    } 
+<?php
+
+if (session_status() == PHP_SESSION_NONE)
+{
+    session_start();
+
+    session_destroy(); 
+}
+
 ?> 
 
 <?php
