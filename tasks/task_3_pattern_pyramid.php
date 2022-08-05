@@ -26,47 +26,38 @@ $page =
         </div>
         <div>
             <?php
-            /* 
-                $lines  = 7; 
-                $width  = 4; 
-                $intial = ($lines / 2) + 1;
-
-                for ($i=1; $i<=$lines;$i++)
+                $maxNum       = 5;
+                $initialValue = 0;
+                
+                for ($i=0; $i <= ($maxNum-1) ; $i++)
                 {
-                    for ($j=0; $j<=12;$j++)
-                    {
-                        if($j == $initial)
-                        {
-                            $initial *= $initial;
+                    $initialValue  = ($i + 1); 
+                    $accumulateNum = 0;  
 
-                            echo "*";
-                        }
-                        else 
-                        {
-                            echo "<span>&nbsp</span>";
-                        }
+                    for($j=0; $j <= $i; $j++ )
+                    {
+                        $accumulateNum += $initialValue; 
+
+                        echo "<span class='mr-2 p-2'>{$accumulateNum}</span>";
                     }
+
+                    echo "<br>"; 
+                }
+
+                for ($i = ($maxNum-2); $i >= 0; $i--)
+                {
+                    $initialValue  = ($i + 1);
+                    $accumulateNum = 0;
+
+                    for ($j = 0; $j <= $i; $j++)
+                    {
+                        $accumulateNum += $initialValue;
+
+                        echo "<span class='mr-2 p-2'>{$accumulateNum}</span>";
+                    }
+
                     echo "<br>";
-                } */
-            echo "<pre>";
-            for ($i = 1; $i < 8; $i++)
-            {
-                for ($j = $i; $j < 8; $j++)
-                    echo "&nbsp;&nbsp;";
-                for ($j = 2 * $i - 1; $j > 0; $j--)
-                    echo ("&nbsp;*");
-                echo "<br>";
-            }
-            $n = 8;
-            for ($i = 8; $i > 0; $i--)
-            {
-                for ($j = $n - $i; $j > 0; $j--)
-                    echo "&nbsp;&nbsp;";
-                for ($j = 2 * $i - 1; $j > 0; $j--)
-                    echo ("&nbsp;*");
-                echo "<br>";
-            }
-            echo "</pre>";
+                }
             ?>
         </div>
     </div>
