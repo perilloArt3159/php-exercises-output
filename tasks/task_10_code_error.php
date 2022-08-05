@@ -26,48 +26,42 @@ $page =
         </div>
         <div>
             <?php
-            /* 
-                $lines  = 7; 
-                $width  = 4; 
-                $intial = ($lines / 2) + 1;
+            function bubbleSort($lists)
+            {
+                $length = count($lists);
 
-                for ($i=1; $i<=$lines;$i++)
+                for ($parent = 0; $parent < $length; $parent++)
                 {
-                    for ($j=0; $j<=12;$j++)
+                    echo print_r ($lists) . '<br>';
+                    for ($child = 0; $child < $length - $parent - 1; $child++)
                     {
-                        if($j == $initial)
+                        if ($lists[$child] > $lists[$child + 1])
                         {
-                            $initial *= $initial;
-
-                            echo "*";
-                        }
-                        else 
-                        {
-                            echo "<span>&nbsp</span>";
+                            $temp = $lists[$child + 1];
+                            $lists[$child] = $lists[$child + 1];
+                            $lists[$child + 1] = $temp;
                         }
                     }
-                    echo "<br>";
-                } */
-            echo "<pre>";
-            for ($i = 1; $i < 8; $i++)
-            {
-                for ($j = $i; $j < 8; $j++)
-                    echo "&nbsp;&nbsp;";
-                for ($j = 2 * $i - 1; $j > 0; $j--)
-                    echo ("&nbsp;*");
-                echo "<br>";
+                }
+
+                return $lists;
             }
-            $n = 8;
-            for ($i = 8; $i > 0; $i--)
+
+            $testArray   = [50, 40, 30 ,20 ,20];
+            
+            $sortedArray =  bubbleSort($testArray);
+
+            for($i=0; $i < count($sortedArray); $i++)
             {
-                for ($j = $n - $i; $j > 0; $j--)
-                    echo "&nbsp;&nbsp;";
-                for ($j = 2 * $i - 1; $j > 0; $j--)
-                    echo ("&nbsp;*");
-                echo "<br>";
+                echo $sortedArray[$i] . '<br>';
             }
-            echo "</pre>";
+
             ?>
+
+            <h1>Explaination</h1>
+            <p>
+
+            </p>
         </div>
     </div>
 

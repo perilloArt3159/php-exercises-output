@@ -26,20 +26,30 @@ $page =
         </div>
         <div>
             <?php
-    /* 
-                $lines  = 7; 
-                $width  = 4; 
-                $intial = ($lines / 2) + 1;
+                echo "<pre>";
 
-                for ($i=1; $i<=$lines;$i++)
+                $patternPoints = 
+                [
+                    [3, 9], 
+                    [2, 4, 8, 10], 
+                    [1, 5, 7, 11], 
+                    [0, 6, 12],
+                    [1, 5, 7, 11],
+                    [2, 4, 8, 10],
+                    [3, 9], 
+                ]; 
+
+                $rows    = 7;
+                $width   = 4;
+                $columns = 12;
+
+                for ($i=0; $i < $rows;$i++)
                 {
-                    for ($j=0; $j<=12;$j++)
+                    for ($j=0; $j<=$columns;$j++)
                     {
-                        if($j == $initial)
+                        if(in_array($j, $patternPoints[$i]))
                         {
-                            $initial *= $initial;
-
-                            echo "*";
+                            echo "<span>*</span>";
                         }
                         else 
                         {
@@ -47,25 +57,8 @@ $page =
                         }
                     }
                     echo "<br>";
-                } */
-                echo "<pre>";
-                for ($i = 1; $i < 8; $i++)
-                {
-                    for ($j = $i; $j < 8; $j++)
-                        echo "&nbsp;&nbsp;";
-                    for ($j = 2 * $i - 1; $j > 0; $j--)
-                        echo ("&nbsp;*");
-                    echo "<br>";
-                }
-                $n = 8;
-                for ($i = 8; $i > 0; $i--)
-                {
-                    for ($j = $n - $i; $j > 0; $j--)
-                        echo "&nbsp;&nbsp;";
-                    for ($j = 2 * $i - 1; $j > 0; $j--)
-                        echo ("&nbsp;*");
-                    echo "<br>";
-                }
+                } 
+
                 echo "</pre>";
             ?>  
         </div>
