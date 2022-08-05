@@ -9,6 +9,9 @@
                 <a href="/" class="block mt-4 lg:inline-block lg:mt-0 <?= $page['name'] == 'home' ? 'text-gray-400 cursor-not-allowed' : 'text-white' ?> hover:text-gray-400 font-bold mr-4">
                     Home
                 </a>
+                <a href="https://github.com/perilloArt3159/php-exercises-output" class="block mt-4 lg:inline-block lg:mt-0  text-white hover:text-gray-400 font-bold mr-4" target="_blank">
+                    Github Repository
+                </a>
             </div>
         </div>
     </nav>
@@ -18,15 +21,15 @@
                 <?= $page['caption'] ?? 'Page Caption' ?>
             </h1>
 
-            <?php if ($page['name'] != 'home'): ?>
-            <a href="/" class="bg-gray-900 p-1 px-3 block rounded text-white hover:bg-gray-800 ease-in-out duration-900 flex justify-center items-center text-sm">
-                <span class="material-symbols-outlined">
-                    home
-                </span>
-                <span class="ml-2">
-                    Back to Home
-                </span>
-            </a>
+            <?php if ($page['name'] != 'home') : ?>
+                <a href="/" class="bg-gray-900 p-1 px-3 block rounded text-white hover:bg-gray-800 ease-in-out duration-900 flex justify-center items-center text-sm">
+                    <span class="material-symbols-outlined">
+                        home
+                    </span>
+                    <span class="ml-2">
+                        Back to Home
+                    </span>
+                </a>
             <?php endif ?>
         </div>
         <div class="h-1 w-full bg-gray-200">

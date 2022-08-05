@@ -113,7 +113,7 @@ $page =
             </div>
 
             <div class="my-2">
-                <h1 class="font-bold mb-2">Explaination</h1>
+                <h1 class="font-bold mt-2">Explanation</h1>
                 <ul class="list-disc">
                     <li>
                         $temp = $lists[$child + 1]; should be $temp = $lists[$child];
