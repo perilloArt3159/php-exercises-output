@@ -1,6 +1,26 @@
 <!DOCTYPE html>
 
 <?php
+if (session_status() == PHP_SESSION_NONE)
+{
+    //session has not started
+    session_start();
+}
+?>
+
+<?php
+
+if (!isset($_SESSION['REFRESH_COUNTER']))
+{
+    $_SESSION['REFRESH_COUNTER'] = 0;
+}
+else
+{
+    $_SESSION['REFRESH_COUNTER'] += 1;
+}
+?>
+
+<?php
 $page =
     [
         'name'      => 'Page Counter',
@@ -23,16 +43,20 @@ $page =
             <h1 class="my-3">
                 5.) Create a page that shows "refresh count : 0".
             </h1>
-            <ul>
+            <ul class="list-disc">
                 <li>
                     Increase the count value by 1 every page refresh
                 </li>
             </ul>
         </div>
-        <div>
+        <div class="my-2">
             <?php
-
+                $refreshCounter = $_SESSION['REFRESH_COUNTER'];
             ?>
+
+            <h1 class="p-2 bg-gray-100 mr-1 rounded shadow">
+                Refresh Counter : <?=$refreshCounter?>
+            </h1>
         </div>
     </div>
 
