@@ -21,53 +21,67 @@ $page =
     <div class="container mx-auto">
         <div>
             <h1 class="my-3">
-                1.) Create a Double Diamond Pattern.
+                4.) Create a Table Pattern.
             </h1>
         </div>
         <div>
             <?php
-            /* 
-                $lines  = 7; 
-                $width  = 4; 
-                $intial = ($lines / 2) + 1;
+            $sizeX = 6;
+            $sizeY = 5;
 
-                for ($i=1; $i<=$lines;$i++)
-                {
-                    for ($j=0; $j<=12;$j++)
+            $numArray = []; 
+
+            for ($i = 0; $i < $sizeX; $i++)
+            {
+                $numArray[$i] = [];
+                $initial      = $i + 1;  
+                $solution     = $i; 
+
+                for ($j = 0; $j < $sizeY; $j++)
+                {                    
+                    if ($j == 0)
                     {
-                        if($j == $initial)
-                        {
-                            $initial *= $initial;
-
-                            echo "*";
-                        }
-                        else 
-                        {
-                            echo "<span>&nbsp</span>";
-                        }
+                        array_push($numArray[$i], $initial);
+                        $solution = $initial; 
                     }
-                    echo "<br>";
-                } */
-            echo "<pre>";
-            for ($i = 1; $i < 8; $i++)
-            {
-                for ($j = $i; $j < 8; $j++)
-                    echo "&nbsp;&nbsp;";
-                for ($j = 2 * $i - 1; $j > 0; $j--)
-                    echo ("&nbsp;*");
-                echo "<br>";
+                    else 
+                    {
+                        $solution *= $initial+1; 
+                        array_push($numArray[$i], $solution);
+                    }
+                }
+
+                //! Reverse Entries
+                $numArray[$i] = array_reverse($numArray[$i]);
             }
-            $n = 8;
-            for ($i = 8; $i > 0; $i--)
-            {
-                for ($j = $n - $i; $j > 0; $j--)
-                    echo "&nbsp;&nbsp;";
-                for ($j = 2 * $i - 1; $j > 0; $j--)
-                    echo ("&nbsp;*");
-                echo "<br>";
-            }
-            echo "</pre>";
             ?>
+            <div class="grid grid-cols-2 gap-4 mt-5">
+                <div class="">
+                    <table class="table-auto w-full text-sm shadow-md rounded overflow-hidden">
+                        <thead>
+                            <tr class="bg-gray-900 text-white text-left border-b">
+                                <th class="p-3 text-center" colspan="5">OUTPUT</th>
+                            </tr>
+                            <tr class="bg-gray-900 text-white text-left">
+                                <?php for ($i = 0; $i < ($sizeX-1); $i++) : ?>
+                                    <th class="p-3">Col_<?= $i + 1 ?></th>
+                                <?php endfor; ?>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php for ($i = 0; $i < $sizeX; $i++) : ?>
+                                <tr class="bg-white border-b hover:bg-gray-200 ease-in-out duration-300">
+                                    <?php for ($j = 0; $j < $sizeY; $j++) : ?>
+                                        <td class="p-3">
+                                            <?= $numArray[$i][$j]; ?>
+                                        </td>
+                                    <?php endfor; ?>
+                                </tr>
+                            <?php endfor; ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
 
