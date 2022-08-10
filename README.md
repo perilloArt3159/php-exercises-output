@@ -1,6 +1,6 @@
 # php-exercises-output
 
-Exercises from a Job Assessment (Repository is Private)
+Some PHP Exercises
 
 # Contributors 
 
