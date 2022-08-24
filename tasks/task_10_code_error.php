@@ -3,9 +3,9 @@
 <?php
 $page =
     [
-        'name'      => 'Code Error',
+        'name'      => 'Bubble Sort Code Error',
         'title'     => 'Task 10',
-        'caption'   => 'Task 10 : Code Error'
+        'caption'   => 'Task 10 : Bubble Sort Code Error'
     ];
 ?>
 
@@ -79,40 +79,43 @@ $page =
 
             ?>
 
-            <div class="my-2">
-                <h1 class="font-bold mb-2">
-                    Original Array :
-                </h1>
-                <?php for ($i = 0; $i < count($testArray); $i++) : ?>
-                    <span class="p-2 bg-gray-900 text-white mr-1 rounded shadow">
-                        <?= $testArray[$i] ?>
-                    </span>
-                <?php endfor ?>
-            </div>
+            <div class="my-5">
 
-            <div class="my-2">
-                <h1 class="font-bold mb-2">
-                    Sorted Array Using Old Bubble Sort :
-                </h1>
-                <?php for ($i = 0; $i < count($testArray); $i++) : ?>
-                    <span class="p-2 bg-gray-900 text-white mr-1 rounded shadow">
-                        <?= $errorSortedArray[$i] ?>
-                    </span>
-                <?php endfor ?>
-            </div>
+                <div class="my-4">
+                    <h1 class="font-bold mb-2">
+                        Original Array :
+                    </h1>
+                    <?php for ($i = 0; $i < count($testArray); $i++) : ?>
+                        <span class="p-2 bg-gray-900 text-white mr-1 rounded shadow">
+                            <?= $testArray[$i] ?>
+                        </span>
+                    <?php endfor ?>
+                </div>
 
-            <div class="my-2">
-                <h1 class="font-bold mb-2">
-                    Sorted Array Using Fixed Bubble Sort :
-                </h1>
-                <?php for ($i = 0; $i < count($testArray); $i++) : ?>
-                    <span class="p-2 bg-gray-900 text-white mr-1 rounded shadow">
-                        <?= $fixedSortedArray[$i] ?>
-                    </span>
-                <?php endfor ?>
-            </div>
+                <div class="my-4">
+                    <h1 class="font-bold mb-2">
+                        Sorted Array Using Old Bubble Sort :
+                    </h1>
+                    <?php for ($i = 0; $i < count($testArray); $i++) : ?>
+                        <span class="p-2 bg-gray-900 text-white mr-1 rounded shadow">
+                            <?= $errorSortedArray[$i] ?>
+                        </span>
+                    <?php endfor ?>
+                </div>
 
-            <div class="my-2">
+                <div class="my-4">
+                    <h1 class="font-bold mb-2">
+                        Sorted Array Using Fixed Bubble Sort :
+                    </h1>
+                    <?php for ($i = 0; $i < count($testArray); $i++) : ?>
+                        <span class="p-2 bg-gray-900 text-white mr-1 rounded shadow">
+                            <?= $fixedSortedArray[$i] ?>
+                        </span>
+                    <?php endfor ?>
+                </div>
+                    
+            </div>
+            <div class="my-2 border px-5 py-2">
                 <h1 class="font-bold mt-2">Explanation</h1>
                 <ul class="list-disc">
                     <li>
